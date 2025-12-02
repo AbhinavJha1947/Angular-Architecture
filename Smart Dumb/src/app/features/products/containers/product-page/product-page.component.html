@@ -1,0 +1,5 @@
+<div class="product-page">
+    <app-product-details *ngIf="product$ | async as product" [product]="product" (back)="onBack()"
+        (edit)="onEdit($event)">
+    </app-product-details>
+</div>

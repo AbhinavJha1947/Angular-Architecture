@@ -1,0 +1,11 @@
+<div class="product-filter">
+    <input type="text" placeholder="Search..." [(ngModel)]="filter.searchTerm" (ngModelChange)="onFilterChange()">
+    <select [(ngModel)]="filter.category" (change)="onFilterChange()">
+        <option value="">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+    </select>
+    <label>
+        <input type="checkbox" [(ngModel)]="filter.inStock" (change)="onFilterChange()"> In Stock Only
+    </label>
+</div>

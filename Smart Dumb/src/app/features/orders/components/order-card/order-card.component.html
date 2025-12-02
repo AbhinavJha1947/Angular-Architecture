@@ -1,0 +1,6 @@
+<div class="order-card">
+    <h3>Order #{{ order.id }}</h3>
+    <p>Total: {{ order.total | currency }}</p>
+    <app-order-status [status]="order.status"></app-order-status>
+    <button (click)="onViewDetails()">View Details</button>
+</div>

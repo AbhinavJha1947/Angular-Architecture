@@ -1,0 +1,8 @@
+<div class="product-details" *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price | currency }}</p>
+    <p>Category: {{ product.category }}</p>
+    <button (click)="onEdit()">Edit</button>
+    <button (click)="onBack()">Back</button>
+</div>

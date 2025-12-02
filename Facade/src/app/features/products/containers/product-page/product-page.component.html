@@ -1,0 +1,5 @@
+<div class="product-page">
+    <h1>Products</h1>
+    <div *ngIf="loading()">Loading...</div>
+    <app-product-list [products]="products()"></app-product-list>
+</div>

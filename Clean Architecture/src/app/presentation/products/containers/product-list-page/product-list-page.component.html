@@ -1,0 +1,12 @@
+<div class="product-list-container">
+    <h1>Products</h1>
+    <div class="product-grid">
+        <div *ngFor="let product of products$ | async" class="product-card">
+            <img [src]="product.imageUrl" [alt]="product.name" *ngIf="product.imageUrl">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">{{ product.price | currency }}</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>

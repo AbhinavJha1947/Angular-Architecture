@@ -1,0 +1,38 @@
+{
+    "name": "orders-mfe",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/orders-mfe/src",
+    "prefix": "app",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/orders-mfe",
+                "index": "apps/orders-mfe/src/index.html",
+                "main": "apps/orders-mfe/src/main.ts",
+                "polyfills": [
+                    "zone.js"
+                ],
+                "tsConfig": "apps/orders-mfe/tsconfig.json",
+                "assets": [
+                    "apps/orders-mfe/src/assets"
+                ],
+                "styles": [
+                    "apps/orders-mfe/src/styles.scss"
+                ],
+                "scripts": [],
+                "customWebpackConfig": {
+                    "path": "apps/orders-mfe/webpack.config.js"
+                }
+            }
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "buildTarget": "orders-mfe:build",
+                "port": 4202
+            }
+        }
+    }
+}

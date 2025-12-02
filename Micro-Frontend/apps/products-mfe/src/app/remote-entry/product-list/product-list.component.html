@@ -1,0 +1,28 @@
+<div class="product-list-container">
+    <div class="header">
+        <h1>Products</h1>
+        <p>Browse our selection of products</p>
+    </div>
+
+    <div *ngIf="loading" class="loading">
+        <p>Loading products...</p>
+    </div>
+
+    <div *ngIf="!loading" class="products-grid">
+        <div *ngFor="let product of products" class="product-card" (click)="viewProduct(product.id)">
+            <div class="product-image">
+                <img [src]="product.imageUrl" [alt]="product.name" />
+            </div>
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p class="description">{{ product.description }}</p>
+                <div class="product-footer">
+                    <span class="price">${{ product.price | number:'1.2-2' }}</span>
+                    <span class="stock" [class.out-of-stock]="!product.inStock">
+                        {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

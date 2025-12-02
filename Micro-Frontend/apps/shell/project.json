@@ -1,0 +1,38 @@
+{
+    "name": "shell",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/shell/src",
+    "prefix": "app",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/shell",
+                "index": "apps/shell/src/index.html",
+                "main": "apps/shell/src/bootstrap.ts",
+                "polyfills": [
+                    "zone.js"
+                ],
+                "tsConfig": "apps/shell/tsconfig.json",
+                "assets": [
+                    "apps/shell/src/assets"
+                ],
+                "styles": [
+                    "apps/shell/src/styles.scss"
+                ],
+                "scripts": [],
+                "customWebpackConfig": {
+                    "path": "apps/shell/webpack.config.js"
+                }
+            }
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "buildTarget": "shell:build",
+                "port": 4200
+            }
+        }
+    }
+}

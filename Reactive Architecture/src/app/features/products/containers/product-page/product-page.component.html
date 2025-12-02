@@ -1,0 +1,5 @@
+<div class="product-page">
+    <h1>Products</h1>
+    <div *ngIf="loading$ | async">Loading...</div>
+    <app-product-list [products]="(products$ | async) || []"></app-product-list>
+</div>

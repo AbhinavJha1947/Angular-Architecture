@@ -1,0 +1,10 @@
+<div class="order-details-page" *ngIf="order$ | async as order">
+    <h1>Order #{{ order.id }}</h1>
+    <app-order-status [status]="order.status"></app-order-status>
+    <p>Total: {{ order.total | currency }}</p>
+
+    <h3>Timeline</h3>
+    <app-order-timeline [events]="order.timeline"></app-order-timeline>
+
+    <button (click)="onBack()">Back to Orders</button>
+</div>

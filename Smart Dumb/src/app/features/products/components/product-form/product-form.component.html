@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Name</label>
+        <input formControlName="name">
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="number" formControlName="price">
+    </div>
+    <div>
+        <label>Category</label>
+        <input formControlName="category">
+    </div>
+    <div>
+        <label>In Stock</label>
+        <input type="checkbox" formControlName="inStock">
+    </div>
+    <button type="submit" [disabled]="form.invalid">Save</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
+</form>

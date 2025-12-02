@@ -1,0 +1,24 @@
+<div class="register-container">
+    <h2>Register</h2>
+    <app-auth-form [form]="registerForm" [isLoading]="isLoading" submitLabel="Register" (onSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" [formControl]="$any(registerForm.controls['name'])" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" [formControl]="$any(registerForm.controls['email'])" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" [formControl]="$any(registerForm.controls['password'])"
+                class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" type="password" [formControl]="$any(registerForm.controls['confirmPassword'])"
+                class="form-control">
+        </div>
+    </app-auth-form>
+    <p>Already have an account? <a routerLink="/auth/login">Login</a></p>
+</div>

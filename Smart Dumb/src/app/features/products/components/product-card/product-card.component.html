@@ -1,0 +1,9 @@
+<div class="product-card">
+    <img [src]="product.imageUrl" [alt]="product.name" *ngIf="product.imageUrl">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.price | currency }}</p>
+    <div class="actions">
+        <button (click)="onViewDetails()">Details</button>
+        <button (click)="onAddToCart()" [disabled]="!product.inStock">Add to Cart</button>
+    </div>
+</div>

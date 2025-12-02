@@ -1,0 +1,38 @@
+{
+    "name": "products-mfe",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/products-mfe/src",
+    "prefix": "app",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/products-mfe",
+                "index": "apps/products-mfe/src/index.html",
+                "main": "apps/products-mfe/src/main.ts",
+                "polyfills": [
+                    "zone.js"
+                ],
+                "tsConfig": "apps/products-mfe/tsconfig.json",
+                "assets": [
+                    "apps/products-mfe/src/assets"
+                ],
+                "styles": [
+                    "apps/products-mfe/src/styles.scss"
+                ],
+                "scripts": [],
+                "customWebpackConfig": {
+                    "path": "apps/products-mfe/webpack.config.js"
+                }
+            }
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "buildTarget": "products-mfe:build",
+                "port": 4201
+            }
+        }
+    }
+}

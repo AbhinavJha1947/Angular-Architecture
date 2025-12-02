@@ -1,0 +1,42 @@
+.sidebar {
+    width: 250px;
+    background-color: #263238;
+    color: white;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: white;
+    }
+
+    &.active {
+        background-color: rgba(25, 118, 210, 0.3);
+        color: white;
+        border-left: 4px solid #1976d2;
+    }
+
+    .icon {
+        font-size: 20px;
+        margin-right: 12px;
+    }
+
+    .label {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

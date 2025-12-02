@@ -1,0 +1,5 @@
+<div class="product-edit-page">
+    <h1>{{ (product$ | async) ? 'Edit Product' : 'Add Product' }}</h1>
+    <app-product-form [product]="(product$ | async) || undefined" (save)="onSave($event)" (cancel)="onCancel()">
+    </app-product-form>
+</div>

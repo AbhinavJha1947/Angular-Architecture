@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <ng-content></ng-content>
+    <div class="actions">
+        <button type="submit" [disabled]="form.invalid || isLoading">
+            {{ submitLabel }}
+        </button>
+    </div>
+</form>

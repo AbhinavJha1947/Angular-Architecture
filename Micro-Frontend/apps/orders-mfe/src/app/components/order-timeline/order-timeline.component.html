@@ -1,0 +1,10 @@
+<div class="timeline">
+    <div *ngFor="let event of timeline; let last = last" class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+            <h4>{{ event.description }}</h4>
+            <p class="timestamp">{{ formatTimestamp(event.timestamp) }}</p>
+        </div>
+        <div *ngIf="!last" class="timeline-line"></div>
+    </div>
+</div>

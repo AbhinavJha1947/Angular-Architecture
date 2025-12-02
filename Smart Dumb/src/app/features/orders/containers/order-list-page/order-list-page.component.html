@@ -1,0 +1,5 @@
+<div class="order-list-page">
+    <h1>Your Orders</h1>
+    <app-order-card *ngFor="let order of orders$ | async" [order]="order" (viewDetails)="onViewDetails($event)">
+    </app-order-card>
+</div>

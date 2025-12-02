@@ -1,0 +1,61 @@
+<div class="order-details-container">
+    <div *ngIf="loading" class="loading">
+        <p>Loading order details...</p>
+    </div>
+
+    <div *ngIf="notFound && !loading" class="not-found">
+        <h2>Order Not Found</h2>
+        <p>The order you're looking for doesn't exist.</p>
+        <button (click)="goBack()" class="btn-back">Back to Orders</button>
+    </div>
+
+    <div *ngIf="order && !loading" class="order-content">
+        <button (click)="goBack()" class="btn-back">← Back to Orders</button>
+
+        <div class="order-header">
+            <div class="header-info">
+                <h1>{{ order.orderNumber }}</h1>
+                <p class="order-date">Placed on {{ formatDate(order.orderDate) }}</p>
+            </div>
+            <app-order-status [status]="order.status"></app-order-status>
+        </div>
+
+        <div class="order-sections">
+            <div class="section">
+                <h2>Order Items</h2>
+                <div class="items-list">
+                    <div *ngFor="let item of order.items" class="item-row">
+                        <div class="item-info">
+                            <h3>{{ item.productName }}</h3>
+                            <p>Quantity: {{ item.quantity }}</p>
+                        </div>
+                        <div class="item-price">
+                            ${{ item.price * item.quantity | number:'1.2-2' }}
+                        </div>
+                    </div>
+                    <div class="total-row">
+                        <strong>Total Amount:</strong>
+                        <strong class="total-amount">${{ order.totalAmount | number:'1.2-2' }}</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Shipping Information</h2>
+                <p class="shipping-address">{{ order.shippingAddress }}</p>
+                <p *ngIf="order.deliveryDate" class="delivery-date">
+                    <strong>Delivered on:</strong> {{ formatDate(order.deliveryDate) }}
+                </p>
+            </div>
+
+            <div class="section" *ngIf="order.timeline">
+                <h2>Order Timeline</h2>
+                <app-order-timeline [timeline]="order.timeline"></app-order-timeline>
+            </div>
+
+            <div class="actions" *ngIf="order.status !== 'DELIVERED' && order.status !== 'CANCELLED'">
+                <button class="btn-cancel" (click)="cancelOrder()">Cancel Order</button>
+            </div>
+        </div>
+    </div>
+</div>

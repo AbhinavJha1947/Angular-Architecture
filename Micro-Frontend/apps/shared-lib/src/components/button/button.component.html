@@ -1,0 +1,16 @@
+<button [disabled]="disabled || loading" [ngClass]="{
+    'btn': true,
+    'btn-primary': type === 'primary',
+    'btn-secondary': type === 'secondary',
+    'btn-success': type === 'success',
+    'btn-danger': type === 'danger',
+    'btn-warning': type === 'warning',
+    'btn-small': size === 'small',
+    'btn-medium': size === 'medium',
+    'btn-large': size === 'large',
+    'btn-full-width': fullWidth,
+    'btn-loading': loading
+  }">
+    <span *ngIf="loading" class="loader"></span>
+    <span [class.hidden]="loading"><ng-content></ng-content></span>
+</button>

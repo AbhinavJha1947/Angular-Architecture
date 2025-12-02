@@ -1,0 +1,13 @@
+<div class="dashboard">
+    <h1>Dashboard</h1>
+
+    <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+            <div class="stat-icon">{{ stat.icon }}</div>
+            <div class="stat-content">
+                <h3>{{ stat.title }}</h3>
+                <p class="stat-value">{{ stat.value }}</p>
+            </div>
+        </div>
+    </div>
+</div>

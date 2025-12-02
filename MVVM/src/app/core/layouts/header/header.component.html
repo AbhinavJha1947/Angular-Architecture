@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <div class="logo">MyApp</div>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li *ngIf="!isAuthenticated"><a routerLink="/login">Login</a></li>
+      <li *ngIf="isAuthenticated"><button (click)="logout()">Logout</button></li>
+    </ul>
+  </nav>
+</header>

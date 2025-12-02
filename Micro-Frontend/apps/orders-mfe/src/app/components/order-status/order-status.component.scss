@@ -1,0 +1,34 @@
+.order-status {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pending {
+    background: #fef5e7;
+    color: #f39c12;
+}
+
+.status-processing {
+    background: #ebf5fb;
+    color: #3498db;
+}
+
+.status-shipped {
+    background: #e8f8f5;
+    color: #1abc9c;
+}
+
+.status-delivered {
+    background: #d5f4e6;
+    color: #27ae60;
+}
+
+.status-cancelled {
+    background: #fadbd8;
+    color: #e74c3c;
+}

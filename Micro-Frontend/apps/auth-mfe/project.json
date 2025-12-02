@@ -1,0 +1,38 @@
+{
+    "name": "auth-mfe",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/auth-mfe/src",
+    "prefix": "app",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/auth-mfe",
+                "index": "apps/auth-mfe/src/index.html",
+                "main": "apps/auth-mfe/src/main.ts",
+                "polyfills": [
+                    "zone.js"
+                ],
+                "tsConfig": "apps/auth-mfe/tsconfig.json",
+                "assets": [
+                    "apps/auth-mfe/src/assets"
+                ],
+                "styles": [
+                    "apps/auth-mfe/src/styles.scss"
+                ],
+                "scripts": [],
+                "customWebpackConfig": {
+                    "path": "apps/auth-mfe/webpack.config.js"
+                }
+            }
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "buildTarget": "auth-mfe:build",
+                "port": 4203
+            }
+        }
+    }
+}

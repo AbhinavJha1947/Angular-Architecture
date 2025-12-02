@@ -1,0 +1,42 @@
+{
+    "name": "micro-frontend-workspace",
+    "version": "1.0.0",
+    "description": "Micro-Frontend Architecture with Module Federation",
+    "scripts": {
+        "start:shell": "nx serve shell",
+        "start:products": "nx serve products-mfe",
+        "start:orders": "nx serve orders-mfe",
+        "start:auth": "nx serve auth-mfe",
+        "build": "nx run-many --target=build --all",
+        "test": "nx run-many --target=test --all"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular-architects/module-federation": "^20.0.0",
+        "@angular/animations": "^17.0.0",
+        "@angular/common": "^17.0.0",
+        "@angular/compiler": "^17.0.0",
+        "@angular/core": "^17.0.0",
+        "@angular/forms": "^17.0.0",
+        "@angular/platform-browser": "^17.0.0",
+        "@angular/platform-browser-dynamic": "^17.0.0",
+        "@angular/router": "^17.0.0",
+        "rxjs": "^7.8.0",
+        "tslib": "^2.6.0",
+        "zone.js": "^0.14.0"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "^17.0.0",
+        "@angular-devkit/core": "^17.0.0",
+        "@angular-devkit/schematics": "^17.0.0",
+        "@angular/cli": "^17.0.0",
+        "@angular/compiler-cli": "^17.0.0",
+        "@module-federation/enhanced": "^0.2.0",
+        "@nx/angular": "^17.0.0",
+        "@nx/workspace": "^17.0.0",
+        "@types/node": "^20.0.0",
+        "nx": "^17.0.0",
+        "typescript": "^5.2.0",
+        "webpack": "^5.88.0"
+    }
+}

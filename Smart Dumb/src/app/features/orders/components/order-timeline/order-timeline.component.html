@@ -1,0 +1,6 @@
+<ul class="timeline">
+    <li *ngFor="let event of events">
+        <strong>{{ event.status }}</strong> - {{ event.timestamp | date:'short' }}
+        <p>{{ event.description }}</p>
+    </li>
+</ul>

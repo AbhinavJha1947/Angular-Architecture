@@ -1,0 +1,15 @@
+{
+    "name": "shared-lib",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "apps/shared-lib/src",
+    "prefix": "lib",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+                "project": "apps/shared-lib/ng-package.json"
+            }
+        }
+    }
+}

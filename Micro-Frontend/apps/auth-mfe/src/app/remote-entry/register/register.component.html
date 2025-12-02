@@ -1,0 +1,45 @@
+<div class="register-container">
+    <div class="register-card">
+        <h1>Create Account</h1>
+        <p class="subtitle">Sign up to get started</p>
+
+        <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" [(ngModel)]="registerData.username"
+                    placeholder="Choose a username" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" [(ngModel)]="registerData.email"
+                    placeholder="Enter your email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="registerData.password"
+                    placeholder="Create a password" required />
+                <app-password-strength [password]="registerData.password"></app-password-strength>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword"
+                    [(ngModel)]="registerData.confirmPassword" placeholder="Confirm your password" required />
+            </div>
+
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+
+            <button type="submit" class="btn-submit" [disabled]="loading">
+                {{ loading ? 'Creating Account...' : 'Create Account' }}
+            </button>
+        </form>
+
+        <p class="login-link">
+            Already have an account? <a routerLink="../login">Sign in</a>
+        </p>
+    </div>
+</div>

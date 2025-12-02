@@ -1,0 +1,7 @@
+<div class="product-list-page">
+    <h1>Products</h1>
+    <app-product-filter (filterChange)="onFilterChange($event)"></app-product-filter>
+    <app-product-list [products]="(products$ | async) || []" (productSelected)="onProductSelected($event)"
+        (productAddedToCart)="onProductAddedToCart($event)">
+    </app-product-list>
+</div>

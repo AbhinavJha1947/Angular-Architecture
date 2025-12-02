@@ -1,0 +1,11 @@
+<div class="product-page">
+    <header class="page-header">
+        <h1>Our Products</h1>
+        <p>Browse our collection of premium items</p>
+    </header>
+
+    <div class="product-grid">
+        <app-product-card *ngFor="let product of products$ | async" [product]="product">
+        </app-product-card>
+    </div>
+</div>
